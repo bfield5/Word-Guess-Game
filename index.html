@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Psychic Game</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="assets/javascript/game.js"></script>
+    </head>
+    
+    <body>
+        
+<!--        html code for later-->
+        <div id="game">
+            <p>Guess what letter i'm thinking of?</p>
+            <br>
+            
+            <p>Guesses left: <span id="guessesLeft"><!--computers guess will go here--></span></p>
+            <p>Wins: <span id="wins"><!-- wins will go here--></span></p>
+            <p>Losses: <span id="losses"><!--losses will go here--></span></p>
+            <p>Your guesses so far: <span id="guessesSoFar"><!--your guess will go here--></span></p>
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="text/javascript">
+            var guessesSoFar = [];
+
+            var keyChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+            var landMarkWords = ["Taj Mahal", "Machu Picchu", "Angkor Wat", "Golden Gate Bridge", "Eiffel Tower", "Milan Cathedral", "Alcatraz Island", "Great Wall of China", "Statue of Liberty", "Leaning Tower of Pisa", "Big Ben", "Holly Wood Sign", "Stonehenge", "Pyramids of Giza", "Mount Everest", "The Great Sphinx", "Times Square", "Buckingham Palace", "White House", "Sydney Opera House", "Notre Dame", "St Peters Basilica", "Empire State Building", "Colosseum"];
+
+ // Whenever a user presses a key
+            document.onkeyup = function(event) {
+                
+                var userGuess = event.key.toLowerCase();
+                // if it's NOT a letter, let the user know and 'return'
+                // this will prevent the rest of the code below from running...
+                if (keyChoices.indexOf(userGuess) === -1) {
+                    alert(userGuess + " is not a letter, Please try again!");
+                    return false;
+                }
+
+                // the rest of your code goes here... if the user makes it to
+                // this point, that means they've made a valid guess
+            //    alert("good guess... " + userGuess + " is a letter.");
+            
+               console.log(event.key);
+                
+                // console.log("User Guess: " + userGuess + " Computer Guess: " + computerGuess);
+
+            var word = landMarkWords[Math.floor(Math.random() * landMarkWords.length)];
+
+            console.log(word);
+
+            var answerArray = [];
+            for (var i = 0; i < word.length; i++) {
+                answerArray[i] = "_";
+            }
+            console.log(answerArray);
+
+            var remainingLetters = word.length;
+
+
+
+
+
+
+            }
+
+
+
+        </script>
+
+
+    </body>
+
+
+</html>
